@@ -168,7 +168,7 @@ public class MetricsLite {
                         // Each post thereafter will be a ping
                         firstPost = false;
                     } catch (IOException e) {
-                        //Bukkit.getLogger().log(Level.INFO, "[Metrics] " + e.getMessage());
+                        Bukkit.getLogger().log(Level.INFO, "[Metrics] " + e.getMessage());
                     }
                 }
             }, 0, PING_INTERVAL * 1200);
@@ -310,7 +310,7 @@ public class MetricsLite {
         if (response == null || response.startsWith("ERR")) {
             throw new IOException(response); //Throw the exception
         }
-        //if (response.startsWith("OK")) - We should get "OK" followed by an optional description if everything goes right
+        if (response.startsWith("OK")) - We should get "OK" followed by an optional description if everything goes right
     }
 
     /**
